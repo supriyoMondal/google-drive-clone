@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
-import { auth } from "../firebase";
+import React, { useContext, useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
+import { auth } from '../firebase';
 const AuthContext = React.createContext();
 
 export function useAuth() {
@@ -20,6 +20,9 @@ export function AuthProvider({ children }) {
   function logout() {
     return auth.signOut();
   }
+  function resetPassword(email) {
+    return auth.sendPasswordResetEmail(email);
+  }
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -34,6 +37,7 @@ export function AuthProvider({ children }) {
     signUp,
     login,
     logout,
+    resetPassword,
   };
 
   if (loading) {
@@ -53,10 +57,10 @@ export function AuthProvider({ children }) {
 
 const styles = {
   spinnerContainer: {
-    height: "100vh",
-    width: "100vw",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    height: '100vh',
+    width: '100vw',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 };
