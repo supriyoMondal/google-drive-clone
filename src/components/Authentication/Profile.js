@@ -1,24 +1,25 @@
-import React, { useState } from "react";
-import { Button, Card, Alert } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
-import { useAuth } from "../context/AuthContent";
+import React, { useState } from 'react';
+import { Button, Card, Alert } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContent';
+import CenterContainer from './CenterContainer';
 
-const Dashboard = () => {
-  const [error, setError] = useState("");
+const Profile = () => {
+  const [error, setError] = useState('');
   const { currentUser, logout } = useAuth();
   const history = useHistory();
 
   async function handleLogout() {
     try {
       await logout();
-      history.push("/login");
+      history.push('/login');
     } catch (error) {
       setError(error.message);
     }
   }
 
   return (
-    <>
+    <CenterContainer>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Profile</h2>
@@ -35,8 +36,8 @@ const Dashboard = () => {
           Log Out
         </Button>
       </div>
-    </>
+    </CenterContainer>
   );
 };
 
-export default Dashboard;
+export default Profile;

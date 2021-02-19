@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { Form, Card, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContent';
+import { useAuth } from '../../context/AuthContent';
+import CenterContainer from './CenterContainer';
 const ForgotPassword = () => {
   const emailRef = useRef();
   const { resetPassword } = useAuth();
@@ -25,7 +26,7 @@ const ForgotPassword = () => {
   }
 
   return (
-    <>
+    <CenterContainer>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Reset Password</h2>
@@ -48,7 +49,7 @@ const ForgotPassword = () => {
         Create new account?
         <Link to="/signup"> Sign up</Link>
       </div>
-    </>
+    </CenterContainer>
   );
 };
 

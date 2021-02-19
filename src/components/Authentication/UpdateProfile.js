@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { Form, Card, Button, Alert } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
-import { useAuth } from '../context/AuthContent';
+import { useAuth } from '../../context/AuthContent';
+import CenterContainer from './CenterContainer';
 const UpdateProfile = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -31,7 +32,7 @@ const UpdateProfile = () => {
       }
       setLoading(true);
       await Promise.all(promises);
-      history.push('/');
+      history.push('/user');
     } catch (error) {
       setError(error.message);
     } finally {
@@ -40,7 +41,7 @@ const UpdateProfile = () => {
   }
 
   return (
-    <>
+    <CenterContainer>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Update Profile</h2>
@@ -79,9 +80,9 @@ const UpdateProfile = () => {
       </Card>
 
       <div className="w-100 text-center mt-3">
-        <Link to="/">Cancel</Link>
+        <Link to="/user">Cancel</Link>
       </div>
-    </>
+    </CenterContainer>
   );
 };
 

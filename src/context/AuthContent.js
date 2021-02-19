@@ -48,13 +48,13 @@ export function AuthProvider({ children }) {
     updatePassword,
   };
 
-  if (loading) {
-    return (
-      <div style={styles.spinnerContainer}>
-        <Spinner animation="border" />
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div style={styles.spinnerContainer}>
+  //       <Spinner animation="border" />
+  //     </div>
+  //   );
+  // }
 
   return (
     <AuthContext.Provider value={value}>
