@@ -15,14 +15,15 @@ const App = () => {
       <AuthProvider>
         <Switch>
           {/* Drive */}
-          <PrivateRoute exact path="/" component={Dashboard} />
+          <PrivateRoute exact path='/' component={Dashboard} />
+          <PrivateRoute exact path='/folder/:folderId' component={Dashboard} />
           {/* Profile */}
-          <PrivateRoute path="/user" component={Profile} />
-          <PrivateRoute path="/update-profile" component={UpdateProfile} />
+          <PrivateRoute path='/user' component={Profile} />
+          <PrivateRoute path='/update-profile' component={UpdateProfile} />
           {/* Auth */}
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/forgot-password" component={ForgotPassword} />
+          <Route path='/login' component={Login} />
+          <Route path='/signup' component={Signup} />
+          <Route path='/forgot-password' component={ForgotPassword} />
         </Switch>
       </AuthProvider>
     </Router>

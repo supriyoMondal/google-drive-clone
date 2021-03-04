@@ -35,7 +35,7 @@ const AddFolderButton = ({ currentFolder }) => {
 
   return (
     <>
-      <Button onClick={openModal} variant="outline-success">
+      <Button onClick={openModal} variant='outline-success'>
         <FontAwesomeIcon icon={faFolderPlus} />
       </Button>
       <Modal show={open} onHide={closeModal}>
@@ -44,7 +44,7 @@ const AddFolderButton = ({ currentFolder }) => {
             <Form.Group>
               <Form.Label>Folder Name</Form.Label>
               <Form.Control
-                type="text"
+                type='text'
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -52,10 +52,10 @@ const AddFolderButton = ({ currentFolder }) => {
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={closeModal}>
+            <Button variant='secondary' onClick={closeModal}>
               Close
             </Button>
-            <Button type="submit">Add Folder</Button>
+            <Button type='submit'>Add Folder</Button>
           </Modal.Footer>
         </Form>
       </Modal>
